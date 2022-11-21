@@ -1,4 +1,4 @@
-"""simple_web URL Configuration
+"""menlo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,11 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-import simpleapp.views
+from django.urls import path, re_path
+import lab3.views
 
 
 urlpatterns = [
-    path('simpleapp/', simpleapp.views.index),
     path('admin/', admin.site.urls),
-]   
+    path('lab3/', lab3.views.home),
+    path('lab3/generate/', lab3.views.generate),
+    path('lab3/check/', lab3.views.check),
+]
+
+
